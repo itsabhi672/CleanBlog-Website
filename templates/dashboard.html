@@ -1,0 +1,39 @@
+{% include "header.html" %}
+
+<header class="masthead" style="background-image: url('static/assets/img/home-bg.jpg')"
+        xmlns="http://www.w3.org/1999/html">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h3>Welcome to Admin's Dashboard.</h3>
+                            <span class="subheading">You'are logged in as Admin.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+</header>
+<div class="container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for post in posts: %}
+        <tr>
+          <th scope="row">{{post.s_no}}</th>
+          <td>{{post.title}}</td>
+          <td><button class="btn btn-primary">Delete</button></td>
+          <td><a href="/edit/{{ post.s_no }}"></a><button class="btn btn-primary">Edit</button></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+</div>
+
+{% include 'footer.html' %}

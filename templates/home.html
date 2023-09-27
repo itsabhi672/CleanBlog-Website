@@ -1,4 +1,5 @@
-{% include 'header.html' %}
+{% include "header.html" %}
+
         <!-- Navigation-->
 <header class="masthead" style="background-image: url('static/assets/img/home-bg.jpg')"
         xmlns="http://www.w3.org/1999/html">
@@ -20,9 +21,8 @@
                     <!-- Post preview-->
                     {% for blog in blogs: %}
                     <div class="post-preview">
-                        <a href="#">
-                        <h2 class="post-title"> {{ blog['title'] }} </h2>
-<!--                            <p class="post-subtitle">{{ blog['subtitle'] }}</p>-->
+                        <a href="{{ url_for('post_page', id=blog['id']) }}">
+                            <h2 class="post-title"> {{ blog['title'] }} </h2>
                         </a>
                         <p class="post-meta">
                             Posted by
@@ -33,8 +33,12 @@
                     <!-- Divider-->
                     <hr class="my-4" />
                     {% endfor %}
-                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase"
-                                                                    href="#!">Older Posts →</a></div>
+                    <div class=" container clearfix mb-4">
+                        {% if number != 0: %}
+                        <a class="btn btn-primary text-uppercase float-right" href="#!">Older Posts →</a>
+                        {% endif %}
+                        <a class="btn btn-primary text-uppercase float-left" href="#!">Newer Posts →</a>
+                    </div>
                 </div>
             </div>
         </div>

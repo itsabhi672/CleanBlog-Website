@@ -1,0 +1,1 @@
+postgresql://karangupta:cKikpjoQq7IJDi7dpRKsYy7lqzATROWC@dpg-ck9udavs0fgc73fnpphg-a/code_blog_database
